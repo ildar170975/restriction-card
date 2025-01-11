@@ -268,6 +268,7 @@ class RestrictionCard extends LitElement implements LovelaceCard {
       :host {
         display: block;
         position: relative;
+        height: 100%;
         --regular-lock-color: var(--restriction-regular-lock-color, var(--primary-text-color, #212121));
         --success-lock-color: var(--restriction-success-lock-color, var(--primary-color, #03a9f4));
         --blocked-lock-color: var(--restriction-blocked-lock-color, var(--error-state-color, #db4437));
@@ -277,6 +278,9 @@ class RestrictionCard extends LitElement implements LovelaceCard {
         --lock-row-margin-top: var(--restriction-lock-row-margin-top, 0px);
         --lock-icon-size: var(--restriction-lock-icon-size, var(--mdc-icon-size, 24px));
         --lock-opacity: var(--restriction-lock-opacity, 0.5);
+      }
+      div:has(#card) {
+        height: 100%;
       }
       ha-icon {
         --mdc-icon-size: var(--lock-icon-size);
@@ -295,6 +299,9 @@ class RestrictionCard extends LitElement implements LovelaceCard {
       }
       #overlay:not(:has(.hidden)) + #card.card-row {
         overflow-y: clip;
+      }
+      #card {
+        height: 100%;
       }
       .blocked {
         color: var(--blocked-lock-color) !important;
