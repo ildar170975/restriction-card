@@ -138,6 +138,7 @@ class RestrictionCard extends LitElement implements LovelaceCard {
     }
 
     if (this._config.restrictions && this._matchRestriction(this._config.restrictions.hide)) {
+      fireEvent(this, "row-visibility-changed", { row: this, value: false });
       return html``;
     }
 
